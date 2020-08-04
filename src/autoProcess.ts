@@ -270,7 +270,7 @@ export function sveltePreprocess(
         getTransformerOptions('babel'),
         {
           content: code,
-          map,
+          map: typeof map == 'string' ? JSON.parse(map) : map,
           filename,
           attributes,
         },
